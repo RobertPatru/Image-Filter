@@ -1,14 +1,13 @@
 const inputTypeFile = document.querySelector('#upload-image');
 const imageContainer = document.querySelector('.image-container');
-let uploadedImage = "";
-let alreadyImgUploaded = false;
+const samllImages = document.querySelectorAll('.small-img');
+const uploadedImage = document.querySelector('.uploaded-image');
 
 inputTypeFile.addEventListener('change', changeImage);
 
 function changeImage() {
-    const newImg = document.createElement('img');
-    newImg.classList.add('uploaded-image');
-
+let uploadedImage = "";
+    const bigImg = document.querySelector('.big-image');
     const choosedFile = this.files[0];
 
 
@@ -17,21 +16,25 @@ function changeImage() {
        
         reader.addEventListener('load', function(){
             uploadedImage = reader.result;
-            newImg.setAttribute('src', uploadedImage);
+            bigImg.setAttribute('src', uploadedImage);
+
+
+
+            for(i = 0; i < samllImages.length; i++) {
+                samllImages[i].setAttribute('src', uploadedImage);
+                console.log(samllImages[i]);
+            }
         });
 
         reader.readAsDataURL(choosedFile);
+    }
+}
 
-    }
+for (i = 0; i < samllImages.length; i++) {
+    samllImages[i].addEventListener( 'click', (event) => {
+        console.log(event.target.classList[1]);
+        uploadedImage.classList = "";
 
-    // if you upload an image, the app knows this by setin alreadyImgUploaded = true
-    if (alreadyImgUploaded == false) {
-        imageContainer.append(newImg);
-        alreadyImgUploaded = true;
-        console.log(uploadedImage);
-    }
-    else {
-        console.log('else', alreadyImgUploaded);
-        newImg.setAttribute('src', uploadedImage, uploadedImage);
-    }
+        uploadedImage.classList.add('uploaded-image', 'big-image', `${event.target.classList[1]}`)
+    } );
 }

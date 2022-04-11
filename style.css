@@ -38,21 +38,38 @@ body {
 .container {
     width: 90%;
     height: 100%;
-    border: 5px gray solid;
+    padding: 20px;
 }
 
 
 /* ########################################### */
 .effect-list {
-    flex-wrap: wrap;
+    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}
+
+.small-img {
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 10px black;
+}
+
+.small-img:hover {
+    cursor: pointer;
+}
+
+.effect-name {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 15px;
 }
 
 .list-item {
-    width: 80px;
-    height: 80px;
-    margin: 15px;
-    border: red 5px solid;
-
+    width: 180px;
+    height: 150px;
+    margin: 20px;
+    padding: 10px;
 }
 
 .input-container {
@@ -65,4 +82,55 @@ body {
 
 .uploaded-image {
     max-width: 100%;
+    box-shadow: 0 0 10px black;
+}
+
+/* ############################################## */
+.list-item-2 {
+
+      -webkit-filter: brightness(2) invert(1) grayscale(1);
+           filter: brightness(2) invert(1) grayscale(1);
+
+}
+
+.list-item-3 {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+.list-item-4 {
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
+}
+
+.list-item-5 {
+    filter: brightness(200%);
+}
+
+.list-item-6 {
+    filter: contrast(200%);
+}
+
+.list-item-7 {
+    filter: hue-rotate(90deg);
+}
+
+.list-item-8 {
+    filter: invert(100%);
+}
+
+.list-item-9 {
+    filter: saturate(800%);
+}
+
+.list-item-10 {
+    filter: sepia(100%);
+}
+
+.list-item-11 {
+    filter: contrast(200%) brightness(150%);
+}
+
+.list-item-12 {
+    filter: contrast(200%) brightness(150%) hue-rotate(180deg);
 }
