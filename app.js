@@ -38,3 +38,32 @@ for (i = 0; i < samllImages.length; i++) {
         uploadedImage.classList.add('uploaded-image', 'big-image', `${event.target.classList[1]}`)
     } );
 }
+
+
+document.querySelector('.left-arrow').addEventListener('click', () => {
+    uploadedImage.style.transform  = 'scaleX(-1)';
+});
+
+document.querySelector('.right-arrow').addEventListener('click', () => {
+    uploadedImage.style.transform  = 'scaleX(1)';
+});
+
+document.querySelector('.up-arrow').addEventListener('click', () => {
+    uploadedImage.style.transform  = 'scaleY(-1)';
+});
+
+document.querySelector('.down-arrow').addEventListener('click', () => {
+    uploadedImage.style.transform  = 'scaleY(1)';
+});
+
+let rotate = 0;
+
+document.querySelector('.clockwise-circle').addEventListener('click', () => {
+    rotate = rotate + 90;
+    uploadedImage.style.transform = `rotate(${rotate}deg)`;
+});
+
+document.querySelector('.anticlockwise-circle').addEventListener('click', () => {
+    rotate = rotate - 90;
+    uploadedImage.style.transform = `rotate(${rotate}deg)`;
+});

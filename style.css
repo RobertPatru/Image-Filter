@@ -134,3 +134,52 @@ body {
 .list-item-12 {
     filter: contrast(200%) brightness(150%) hue-rotate(180deg);
 }
+
+
+/* ############################################## */
+.image-container {
+    position: relative;
+}
+
+.icon {
+    position: absolute;
+    z-index: 200;
+    color: white;
+
+    font-size: 70px;
+    align-items: center;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+.left-arrow {
+    top: 50%;
+    right: 2%;
+}
+
+.right-arrow {
+    top: 50%;
+    left: 2%;
+}
+
+.up-arrow {
+    top: 2%;
+    left: 50%;
+}
+
+.down-arrow {
+    bottom: 2%;
+    right: 50%;
+}
+
+.clockwise-circle {
+    top: 2%;
+    right: 2%;
+}
+
+.anticlockwise-circle {
+    top: 2%;
+    left: 2%;
+}
